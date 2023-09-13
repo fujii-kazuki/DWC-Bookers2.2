@@ -22,4 +22,8 @@ class User < ApplicationRecord
   def get_profile_image
     (profile_image.attached?) ? profile_image : 'no_image.jpg'
   end
+
+  def following?(user)
+    followeds_user.include?(user)
+  end
 end
